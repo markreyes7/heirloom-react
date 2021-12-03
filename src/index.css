@@ -1,13 +1,98 @@
-body {
+@import url(//db.onlinewebfonts.com/c/f3258385782c4c96aa24fe8b5d5f9782?family=Old+English+Text+MT);
+@font-face {font-family: "Old English Text MT"; src: url("//db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.eot"); src: url("//db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.woff") format("woff"), url("//db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.svg#Old English Text MT") format("svg"); }
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+html{
+  overflow: hidden;
+}
+body{
+  overflow: hidden;
+  background-color: white;
+}
+img{
+  width: 200%;
+  height: 100%;
+  object-fit: contain;
+}
+:root{
+  --font-color: white;
+  --font-style: "Courier New", Courier, Monaco;
+  --font-size1: 32px;
+  --font-size2: 16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container{
+  position: relative;
+  min-width: 100%;
+  min-height: 85vh;
+  
+}
+
+.header{
+  display: flex;
+  min-width: 100vw;
+  min-height: 15vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+h1{
+  font-style: var(--font-style);
+  font-weight:200;
+}
+.header-text{
+  font-family: var(--font-style);
+  font-size:var(--font-size2)
+}
+.logo{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+.item{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  width: 33.3%;
+}
+
+.position-1{
+  position: absolute;
+  top: 52%;
+  right: 6%;
+  transform: rotateY(-38deg);
+  display: flex;
+  flex-direction: column;
+}
+
+.book-text1{
+  color: var(--font-color);
+  font-family: var(--font-style);
+  font-size:var(--font-size1)
+}
+
+.book-text2{
+  color: var(--font-color);
+  font-family: var(--font-style);
+  font-size:var(--font-size2)
+}
+
+
+
+
+
+.image-container{
+  position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: translate(-28%, 10%);
+}
+
+.center{
+  align-self: center;
 }
