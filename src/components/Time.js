@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from 'react';
 const Time = () => {
     var today = new Date();
-    var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();    
-    var seconds = today.getSeconds();
-    var time = today.getHours() + ":" + today.getMinutes() + ":";
-    var timeDate = time+' '+date;
 
-    const [timer, setTimer] = useState(seconds);
-    useEffect(() => {const interval = setInterval(() => setTimer(timer), 1000);
-        return () => {
-          clearInterval(interval);
-        };})
-
-
+    const [day, setDay] = useState(today);
+    
+    useEffect(() =>{
+        const interval = setInterval(() => {setDay(new Date())}, 1000)
+        return () =>{clearInterval(interval)}
+    },[] )
+    
     return (
-        <>
-            <>{timer}</>
-        </>
+        <div className="center header-text">
+            <p>{day.toDateString() + " " + day.toTimeString().substr(0,8)}</p>
+           
+        </div>
     )
 }
 

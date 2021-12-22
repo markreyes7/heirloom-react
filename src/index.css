@@ -7,10 +7,10 @@
  
 }
 html{
-  overflow: hidden;
+  overflow-x: hidden;
 }
 body{
-  overflow: hidden;
+  overflow-X: hidden;
   background-color: white;
 }
 img{
@@ -39,10 +39,12 @@ img{
   flex-direction: column;
   justify-content: space-between;
 }
+
 h1{
   font-style: var(--font-style);
   font-weight:200;
 }
+
 .header-text{
   font-family: var(--font-style);
   font-size:var(--font-size2)
@@ -51,7 +53,6 @@ h1{
   position: absolute;
   width: 100%;
   height: 100%;
-
 }
 
 .item{
@@ -70,10 +71,18 @@ h1{
   flex-direction: column;
 }
 
+.a-style{
+  text-decoration: none;
+}
+
 .book-text1{
   color: var(--font-color);
   font-family: var(--font-style);
   font-size:var(--font-size1)
+}
+
+.book-text1:hover{
+  border-bottom: solid white;
 }
 
 .book-text2{
@@ -81,18 +90,94 @@ h1{
   font-family: var(--font-style);
   font-size:var(--font-size2)
 }
-
-
-
-
-
 .image-container{
   position: absolute;
-    height: 100%;
-    width: 100%;
-    transform: translate(-28%, 10%);
+  height: 100%;
+  width: 100%;
+  transform: translate(-28%, 10%);
 }
 
 .center{
   align-self: center;
+}
+
+.collection-text{
+  font-size: var(--font-size2);
+  font-family: var(--font-style);
+  font-weight: 400;
+}
+
+.body1{
+  min-height: 85vh;
+  position: relative;
+}
+
+.thePos{
+  position: absolute;
+  top: 10%
+}
+
+.conceptArt{
+  position: absolute;
+  width: 100%;
+  top: 24%;
+}
+
+.box .conceptArt{
+  position: relative ;
+}
+
+.footer{
+  position: absolute;
+  bottom: 3%;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
+.foot-child{
+position: absolute;
+}
+
+.foot-child:nth-child(2){
+  position: absolute;
+  right: 2%;
+}
+.body2{
+  min-height: 100vh;
+  position: relative;
+}
+
+.shop{
+  position: relative;
+  margin-top: 200px;
+}
+
+.box{
+  border-top: solid 2px black;
+}
+
+.btn{
+  background-color: indigo;
+  color: white;
+  width: 70px;
+  height: 70px;
+}
+
+.liCls{
+  list-style: none;
+  border: solid 1px grey;
+  width: 10%;
+}
+
+.itemTitle{
+
+}
+
+.description{
+
+}
+
+.dropdown{
+  position: relative;
+  margin: 16px;
 }

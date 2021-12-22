@@ -1,8 +1,12 @@
+import { Link} from "react-router-dom"
+
 const Title = () => {
+    
     return (
         <div className="center">
-            <h1>Heirloom</h1>
+            <Link className="a-style" to="/"> <h1>Heirloom </h1></Link>
         </div>
+       
     )
 }
 

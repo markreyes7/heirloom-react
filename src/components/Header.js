@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className="header">
             <Title />
-            <Text classStyle="header-text" classPosition="center" text={<Time />}/>
+            <Time />
             <Text classStyle="header-text" classPosition="center" text="Los Angeles, CA" />
         </div>
     )
