@@ -3,27 +3,63 @@ import ItemDescr from "./ItemDescr"
 import ConceptArt from "./ConceptArt"
 import clothing from './concept3.JPG'
 import Button from "./Button"
-import Basket from "./Basket"
-import  data  from './data'
+import AddedToCart from "./AddedToCart"
+
 import ButtonWithDropDown from "./ButtonWithDropDown"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
-const { products } = data;
-const quantData =["1","2","3","4","5"]
+
+const initialState = {
+    totalAmount:0,
+    sizes: []
+}
 
 
-const Item = () => {
-    const [sizeState, setSizeState] = useState('Select Size.')
+
+const quantData =["1","2","3","4"]
+
+
+const Item = ({item, added, addToCart, quantity}) => {
+    
+    const [sizeState, setSizeState] = useState('Select Size.');
+    const [quantState, setQuantState] = useState('Qty.')
+
+    // const [state, dispatch ] = useReducer(reducer, initialState)
+
+    function someFunc(e){
+      setSizeState(e.target.textContent)
+    }
+
+    function someFunc2(e){
+        setQuantState(e.target.textContent)
+    }
+
+
     return (
-        <div className='box'>
-        <ItemTitle itemName="Clothing Piece 1" />
-        <ItemDescr description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit pellentesque habitant." />
-        <ConceptArt art={clothing} />
-        <ButtonWithDropDown dropDownData={products[0].sizes} fromComp={"Select Size"}/>
-        <ButtonWithDropDown dropDownData={quantData} fromComp={"Select Quantity"} />
-        <Button text={"Add to Cart"}/>
-        <Basket isEmpty={true} />
+        <div className='shop-item'>
+        
+        <ItemTitle itemName={item.name}/>
+        <ItemDescr description={item.description} />
+        <ConceptArt art={item.image} />
+        <div className='btn-flex'>
+            <ButtonWithDropDown dropDownData={item.sizes} state={sizeState} setTheState={someFunc}/>
+            <ButtonWithDropDown dropDownData={quantData} state={quantState} setTheState={someFunc2} />
+        </div>
+        
+        <Button btnClass={'add-to-cart'} text={"Add to Cart"} onclick={() => {
+            
+           if(sizeState !== 'Select Size'  && quantState !== 'Qty.' ){
+               var x=0; 
+               while(x < parseInt(quantState)){
+                   addToCart(added => [...added, item]);
+                   x++;
+               }
+              
+           }
+        }} />
+        
+        
             {/* item name
                 item image
                 item description

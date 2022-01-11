@@ -1,11 +1,11 @@
 //child of ButtonWithDropDown
 
 
-const ButtonDropDown = ({data = [], getClicked}) => {
+const ButtonDropDown = ({data = [], getClicked, }) => {
 
     return (
         <div className='hold'>
-            <ul className='text-left'>
+            <ul className='list-items'>
                 {data.map((item,i) =>(
                     <li key={i} className='liCls' onClick={getClicked}>
                         {item}

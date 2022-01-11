@@ -1,11 +1,16 @@
 import React from 'react'
 
-const Button = ({onclick, text}) => {
+
+const Button = ({onclick, text, btnClass}) => {
     return (
-        <button className='btn' onClick={onclick}>
+        <button className={btnClass} onClick={onclick}>
             {text}
         </button>
     )
+}
+
+Button.defaultProps = {
+    btnClass: 'btn'
 }
 
 export default Button

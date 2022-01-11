@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import CollectionBody from './CollectionBody'
 import logo from './concept3.JPG'
@@ -11,14 +11,14 @@ const Collection = () => {
         <div>
             <Header />
             <CollectionBody bodyClass="body1" headText1="Heirloom Spring Collection" headText2="by Rony Montenegro" 
-            logoArt={logo} footText1="Collection I notes" footText2="1"/>
+            logoArt={logo} footText1="Collection I notes" footText2="1" className={'concept-art'}/>
            <CollectionBody bodyClass="body2" headText1="Lorem ipsum dolor sit amet, consectetur adipiscing elit," 
-            headText2="sed do eiusmod tempor incididunt ut labore" 
-            logoArt={logo2} footText1="Collection I notes" footText2="2"/>
+            headText2="Donec eleifend massa et diam imperdiet, a malesuada tellus pretium. Nunc scelerisque, ligula et aliquet bibendum, risus nulla volutpat sapien." 
+            logoArt={logo2} footText1="Collection I notes" footText2="2" />
             <CollectionBody bodyClass="body2" headText1="Lorem ipsum dolor sit amet, consectetur adipiscing elit," 
-            headText2="sed do eiusmod tempor incididunt ut labore" 
+            headText2="Donec eleifend massa et diam imperdiet, a malesuada tellus pretium. Nunc scelerisque, ligula et aliquet bibendum, risus nulla volutpat sapien." 
             logoArt={logo3} footText1="Collection I notes" footText2="3"/>
-            <Shop />
+            <Shop  />
         </div>
         
     )

@@ -11,7 +11,6 @@ ReactDOM.render(
   <Routes> 
 
     <Route exact path="/" element={<App />}> 
-      {/*STUFF GOES HERE */}
     </Route>
     <Route path="Collection" element={<Collection />} />
    

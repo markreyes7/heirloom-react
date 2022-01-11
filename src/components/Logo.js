@@ -8,7 +8,7 @@ const Logo = () => {
     return (
         <div className="logo">
             <div className="image-container">
-                <img src={logo} alt="heirloom-logo"></img>
+                <img  src={logo} alt="heirloom-logo"></img>
             </div>
             <div className="position-1">
                 <Text classStyle="book-text1" text="Heirloom"></Text> 

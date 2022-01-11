@@ -1,16 +1,18 @@
 const data = {
     products: [
         {
-            id: '1',
+            id: 1,
             name: 'Shirt',
             price: 39.99,
             quantity: 50,
-            sizes: ['XS', 'S', 'M', 'L','XL'],
+            description: "This is a good shirt",
+            sizes: ['XS', 'S', 'M', 'L'],
             image: 'https://imbore.com/wp-content/uploads/2020/12/blank-tshirt-white-2.png'
         },
         {
-            id: '2',
+            id: 2,
             name: 'Jacket',
+            description: "This is a good jacket",
             price: 79.99,
             quantity: 70,
             sizes: ['XS', 'S', 'M', 'L', 'XL'],

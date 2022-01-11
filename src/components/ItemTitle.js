@@ -1,6 +1,6 @@
 const ItemTitle = ({itemName}) => {
     return (
-        <div className='itemTitle'>
+        <div className='item-title'>
             <h4>{itemName}</h4>
         </div>
     )

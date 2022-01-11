@@ -1,20 +1,38 @@
 import Button from "./Button"
 import ButtonDropDown from "./ButtonDropDown"
-import { useState } from "react"
+import { useState, useRef, useEffect, useCallback } from "react"
 
-const ButtonWithDropDown = ({ dropDownData, fromComp, fromCompFunc }) => {
+const ButtonWithDropDown = ({ dropDownData, state, setTheState }) => {
     const [opened, setOpen] = useState(false); 
-    const [selection, setSelection] = useState(fromComp)
+    const drop = useRef(null);
     
-    function getClicked(e){
-       setSelection(e.target.textContent);
-       setOpen(false);
-    }
+     function handleClick(e){
+        if(e.target.className === null){
+            console.log("nullyy");
+            return;
+        }
+        else if(e.target.className === 'liCls'){
+            setOpen(false);
+        }
+        else if(!e.target.closest(`.${drop.current.className}`) && opened){
+            setOpen(false)
+        }
+
+     }
+
+        
+
+     useEffect(() => {
+        document.addEventListener("click", handleClick)
+        return() =>{document.removeEventListener("click", handleClick)}
+     },[opened]);
+
+        
 
     return (
-        <div className="dropdown" >
-            <Button text={selection} onclick={() => setOpen(!opened)} />
-           { opened && <ButtonDropDown  data={ dropDownData } getClicked={getClicked} />}
+        <div className="dropdown" ref={drop}  >
+            <Button  text={state} onclick={() => setOpen(!opened)} />
+           { opened && <ButtonDropDown data={ dropDownData } getClicked={setTheState} />}
         </div>
     )
 }
