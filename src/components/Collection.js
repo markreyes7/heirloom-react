@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Header from './Header'
 import CollectionBody from './CollectionBody'
 import logo from './concept3.JPG'

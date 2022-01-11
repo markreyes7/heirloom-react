@@ -29,8 +29,6 @@ const Shop = () => {
     return (
         
         <div className='shop'>
-            {/* Wrap the shop in context provider */}
-            {/* Value can take in an array or dictionary that captures the intial state of each item. */}
             <CartContext.Provider value={{}}>
                 
                 <Item item={item1} added={added} addToCart={addToCart} />

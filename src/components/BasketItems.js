@@ -1,6 +1,3 @@
-//this is where we need to add the increment button and decrement button
-
-
 const BasketItems = ({addToCart, added, setOpenCart, display}) => {
    
     const closeCart = () =>{
@@ -17,10 +14,10 @@ const BasketItems = ({addToCart, added, setOpenCart, display}) => {
                        
                         <p className='item-details'>Size: To Be Added with Redux</p>
                         <p className='item-details'>{item.name+ ': $'+item.price}</p>
-                        {/* <p className='item-details'>${item.price}</p> */}
+                       
                         <div className='remove-wrapper'>
                         <button className='close' onClick={() =>{
-                            /*Function that passes this i index to filter it*/
+                            
                             addToCart(added.filter((item, j) => j !==i))
                         }}> Remove From Cart &times;</button>
                         </div>

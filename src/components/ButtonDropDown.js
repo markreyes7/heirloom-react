@@ -1,5 +1,3 @@
-//child of ButtonWithDropDown
-
 
 const ButtonDropDown = ({data = [], getClicked, }) => {
 

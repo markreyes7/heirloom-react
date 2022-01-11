@@ -1,6 +1,6 @@
 import Button from "./Button"
 import ButtonDropDown from "./ButtonDropDown"
-import { useState, useRef, useEffect, useCallback } from "react"
+import { useState, useRef, useEffect} from "react"
 
 const ButtonWithDropDown = ({ dropDownData, state, setTheState }) => {
     const [opened, setOpen] = useState(false); 
@@ -8,7 +8,6 @@ const ButtonWithDropDown = ({ dropDownData, state, setTheState }) => {
     
      function handleClick(e){
         if(e.target.className === null){
-            console.log("nullyy");
             return;
         }
         else if(e.target.className === 'liCls'){

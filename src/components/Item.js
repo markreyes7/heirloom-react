@@ -1,31 +1,18 @@
 import ItemTitle from "./ItemTitle"
 import ItemDescr from "./ItemDescr"
 import ConceptArt from "./ConceptArt"
-import clothing from './concept3.JPG'
+
 import Button from "./Button"
-import AddedToCart from "./AddedToCart"
 
 import ButtonWithDropDown from "./ButtonWithDropDown"
-import { useState, useEffect } from "react"
-
-
-
-const initialState = {
-    totalAmount:0,
-    sizes: []
-}
-
-
+import { useState} from "react"
 
 const quantData =["1","2","3","4"]
-
 
 const Item = ({item, added, addToCart, quantity}) => {
     
     const [sizeState, setSizeState] = useState('Select Size.');
     const [quantState, setQuantState] = useState('Qty.')
-
-    // const [state, dispatch ] = useReducer(reducer, initialState)
 
     function someFunc(e){
       setSizeState(e.target.textContent)
@@ -34,7 +21,6 @@ const Item = ({item, added, addToCart, quantity}) => {
     function someFunc2(e){
         setQuantState(e.target.textContent)
     }
-
 
     return (
         <div className='shop-item'>
@@ -55,17 +41,9 @@ const Item = ({item, added, addToCart, quantity}) => {
                    addToCart(added => [...added, item]);
                    x++;
                }
-              
            }
         }} />
         
-        
-            {/* item name
-                item image
-                item description
-                button for size
-                button for quant
-                add to cart*/}
         </div>
     )
 }

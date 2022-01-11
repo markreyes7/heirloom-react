@@ -1,6 +1,6 @@
 import { useState, useRef,useEffect } from 'react'
 import BasketItems from './BasketItems';
-import Background from "./Background"
+
 import shopping from "./shopping-cart.png"
 
 const Basket = ({addToCart ,added, totalItemsInCart}) => {
@@ -12,7 +12,7 @@ const Basket = ({addToCart ,added, totalItemsInCart}) => {
     const PopUp = () =>{
         if(ref.current.className === "basket"){
             setOpenCart(!display)
-            console.log("hazah")
+     
         }
         else{
             return
@@ -25,7 +25,7 @@ const Basket = ({addToCart ,added, totalItemsInCart}) => {
         }
         else{
             ref.current.className = "basket"
-            console.log("inital render")
+
             
         }
     }, [display]);
